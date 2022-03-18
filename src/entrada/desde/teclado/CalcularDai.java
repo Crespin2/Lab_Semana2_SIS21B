@@ -1,14 +1,17 @@
 
 package entrada.desde.teclado;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 
 public class CalcularDai {
     public static void main(String[] args) {
+        NumberFormat formato=new DecimalFormat("$#,###.##");
         Scanner leer= new Scanner(System.in);
         double valorMaquina, valorFlete, valorSeguro;
-        System.out.println("Valoe de la maquina: ");
+        System.out.println("Valor de la maquina: ");
         valorMaquina=leer.nextDouble();//Captura de datos en el tipo que se necesita
         System.out.println("Valor del Flete: ");
         valorFlete=leer.nextDouble();
@@ -18,8 +21,8 @@ public class CalcularDai {
         double valorDai=CalcularDai.obtenerDai(valorMaquina,valorFlete,valorSeguro);
         double valorConIva=CalcularDai.obtenerIva(valorDai);
         
-        System.out.println("Valor del Dai: "+valorDai);
-        System.out.println("Valor del IVA: "+valorConIva);
+        System.out.println("Valor del Dai: "+formato.format(valorDai));
+        System.out.println("Valor del IVA: "+formato.format(valorConIva));
     }
     //Crear el metodo para el calculo del DAI 
     public static double obtenerDai(double valorMaquina, double valorFlete, double valorSeguro){
