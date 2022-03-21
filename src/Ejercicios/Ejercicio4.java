@@ -1,6 +1,8 @@
 
 package Ejercicios;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 /**
@@ -30,14 +32,16 @@ public class Ejercicio4 {
         double CCVendidas=Ejercicio4.obtenerComision(compuVendidas);
         double SDevengado=Ejercicio4.obtenerDevengado(CCVendidas);
         double Renta=Ejercicio4.obtenerRenta(SDevengado);
-        double SLiqquido=Ejercicio4.obtenerLiquido(Renta, SDevengado);
+        double SLiquido=Ejercicio4.obtenerLiquido(Renta, SDevengado);
+        
+        NumberFormat formato=new DecimalFormat("$#,###.##");
         
         System.out.println("--------IMPRIMIENDO DATOS-------------");
         System.out.println("El nombre del empleado es: "+nombreEmpleado);
-        System.out.println("La comision por computadoras vendidas es de: "+CCVendidas);
-        System.out.println("El salario devengado es de: "+SDevengado);
-        System.out.println("La renta es de: "+Renta);
-        System.out.println("El salario liquido es de: "+SLiqquido);
+        System.out.println("La comision por computadoras vendidas es de: "+formato.format(CCVendidas));
+        System.out.println("El salario devengado es de: "+formato.format(SDevengado));
+        System.out.println("La renta es de: "+formato.format(Renta));
+        System.out.println("El salario liquido es de: "+formato.format(SLiquido));
     }
     //Metodo para obtener la comision por computadora vendida
     public static double obtenerComision(double compuVendidas){
