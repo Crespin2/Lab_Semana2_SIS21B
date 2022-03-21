@@ -2,6 +2,7 @@
 package entrada.desde.teclado;
 
 import java.io.BufferedReader;//Importar las clase para lectura desde teclado
+import java.io.IOException;
 import java.io.InputStreamReader;//Son tipos String habra que convertir los datos
 
 public class Calculadora {
@@ -20,7 +21,7 @@ public class Calculadora {
             System.out.println("El resultado de la Resta es: "+Calculadora.restar(cantidad1, cantidad2));
             System.out.println("El resultado de la Multiplicaion: "+Calculadora.multiplicar(cantidad1, cantidad2));
             System.out.println("El resultado de la Division es: "+Calculadora.dividir(cantidad1, cantidad2));
-        }catch(Exception e){//Captura del error
+        }catch(IOException e){//Captura del error
             System.out.println(e.getMessage());
         }
         System.out.println(cantidad1+" "+cantidad2);
