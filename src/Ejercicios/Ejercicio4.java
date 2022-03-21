@@ -18,27 +18,45 @@ public class Ejercicio4 {
         la retención de la renta. */
         
         Scanner leer=new Scanner (System.in);
+        double comision;
+        double compuVendidas;
         String nombreEmpleado;
-        double cantidadCV;//Cantidad de computadoras vendidas
         
-        System.out.println("Ingrese el nombre del empleado: ");
+        System.out.println("Ingrese el nombre del Empleado: ");
         nombreEmpleado=leer.nextLine();
-        System.out.println("Ingrese la cantidad de computadoras vendidas: ");
-        cantidadCV=leer.nextInt();
+        System.out.println("Ingrese la cantidad del computadoras vendidas: ");
+        compuVendidas=leer.nextDouble();
         
-        int CV =Ejercicio4.cmsComputadorasVendidas(0);
+        double CCVendidas=Ejercicio4.obtenerComision(compuVendidas);
+        double SDevengado=Ejercicio4.obtenerDevengado(CCVendidas);
+        double Renta=Ejercicio4.obtenerRenta(SDevengado);
+        double SLiqquido=Ejercicio4.obtenerLiquido(Renta, SDevengado);
         
-        
+        System.out.println("--------IMPRIMIENDO DATOS-------------");
+        System.out.println("El nombre del empleado es: "+nombreEmpleado);
+        System.out.println("La comision por computadoras vendidas es de: "+CCVendidas);
+        System.out.println("El salario devengado es de: "+SDevengado);
+        System.out.println("La renta es de: "+Renta);
+        System.out.println("El salario liquido es de: "+SLiqquido);
     }
-    public static int cmsComputadorasVendidas(int cantidadCV){
-        int comisionTotal=cantidadCV*50;
-    return comisionTotal;
+    //Metodo para obtener la comision por computadora vendida
+    public static double obtenerComision(double compuVendidas){
+        double comision=compuVendidas*50;
+    return comision;
     }
-    public static void obtenerSalarioDevengado(int comisionTotal){
-        double devengado=300+comisionTotal;
+    //Metodo para obtener el salario devengado
+    public static double obtenerDevengado(double CCVendidas){
+        double devengado=300+CCVendidas;
+    return devengado;
     }
-    public static void SalarioLiquido(double devengado){
-        double renta=devengado*0.10;
-        double SLiquido=devengado-renta;
+    //Metodo para la renta
+    public static double obtenerRenta(double SDevengado){
+        double renta=SDevengado*0.10;
+    return renta;
+    }
+    //Metodo para obtener el salario Liquido
+    public static double obtenerLiquido (double Renta, double SDevengado){
+        double liquido=SDevengado-Renta;
+    return liquido;
     }
 }
