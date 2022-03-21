@@ -30,7 +30,7 @@ public class Ejercicio3 {
         
         System.out.println("El nombre del empleado es: "+nombreEmpleado);
         System.out.println("La comision es de: "+F.format(VComision));
-        System.out.println("El monto total de las ventas es de: " + F.format(VMTotal));
+        System.out.println("La comision por el total de las ventas es de: " + F.format(VMTotal));
         System.out.println("El salrio Devengado del empleado es de: "+F.format(salarioDevengado));
     }
     //Metodo para la comision
